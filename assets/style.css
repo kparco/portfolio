@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'SFPRODISPLAYREGULAR';
+  src: url('./assets/SFPRODISPLAYREGULAR.woff') format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  font-family: 'SFPRODISPLAYREGULAR', system-ui, -apple-system, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+*, *::before, *::after {
+  border-width: 0;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, p { margin: 0; }
+
+h1 {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+h2, h3, p, a {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h2 { margin-bottom: 7px; }
+
+p, span { opacity: 0.5; }
+
+a {
+  color: #fff;
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+a:hover { text-decoration: underline; }
+
+.content {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 80px 0 80px;
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+}
+
+.intro__content {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+  margin-bottom: 35px;
+}
+
+.intro__content .intro__img img {
+  width: 100%;
+  max-width: 100px;
+}
+
+.about { margin-bottom: 50px; }
+
+.heading { margin-bottom: 35px; }
+
+.exp__content, .contact__content {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  margin-bottom: 35px;
+}
+
+.exp__content .year,
+.contact__content .email {
+  width: 100%;
+  max-width: 105px;
+}
+
+.exp__content .desc,
+.contact__content .link {
+  margin: 7px 0;
+  width: auto;
+}
+
+.arrow {
+  transform: translateY(3px);
+  margin-left: 4px;
+}
+
+footer { margin-top: 60px; }
+
+@media (min-width: 750px) {
+  .content { padding: 110px 0 110px; }
+  .exp__content { flex-wrap: nowrap; }
+}
