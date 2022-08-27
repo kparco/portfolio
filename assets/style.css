@@ -82,11 +82,12 @@ a:hover { text-decoration: underline; }
   max-width: 105px;
 }
 
-.exp__content .desc,
-.contact__content .link {
+.exp__content .desc {
   margin: 7px 0;
   width: auto;
 }
+
+.contact__content .link { width: auto; }
 
 .arrow {
   transform: translateY(3px);
