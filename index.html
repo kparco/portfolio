@@ -14,21 +14,25 @@
           <div class="intro__img"><img src="./assets/kp_optimized.png" /></div>
           <div class="intro__text">
             <h1>Karen Parco</h1>
-            <p>Shopify Front-end Developer</p>
+            <p>Frontend Shopify Developer</p>
           </div>
         </section>
-        <section class="about">
-          <h2>About</h2>
+        <nav class="tabs">
+          <button class="tab" data-tab="about" aria-pressed="true">About</button>
+          <span aria-hidden="true">|</span>
+          <button class="tab" data-tab="projects" aria-pressed="false">Projects</button>
+        </nav>
+        <section class="about" data-panel="about">
           <p>
             I'm Karen. I've built and customized pages that delivers highly
             executed front end experiences by paying close attention to the
             nuances of design, optimization, and performance.
           </p>
           <span>Here's my</span>
-          <a href="./assets/karen_parco_cv.pdf" target="_blank">resume</a
+          <a href="./assets/karen_parco_cv_2026.pdf" target="_blank">resume</a
           ><img class="arrow" src="./assets/arrow-link.svg" />
         </section>
-        <section class="experiences">
+        <section class="experiences" data-panel="about">
           <h2 class="heading">Work Experience</h2>
           <div class="exp__content">
             <div class="year"><p>2023 - present</p></div>
@@ -49,14 +53,13 @@
                     code efficiency and maintainability.
                   </li>
                   <li>
-                    Optimized Shopify websites for better accessibility and
+                    Optimized Shopify websites for better web accessibility and
                     performance.
                   </li>
                 </ul>
                 <div class="stack">
                   <p>
-                    HTML • CSS/SCSS • Liquid • Javascript • Vue.js • PetiteVue •
-                    Tailwind • is-land • Figma • GraphQL
+                    HTML • CSS/SCSS • Liquid • Javascript • Vue.js • Tailwind • Figma
                   </p>
                 </div>
               </div>
@@ -96,6 +99,30 @@
             </div>
           </div>
         </section>
+        <section class="projects" data-panel="projects" hidden>
+          <div class="project__content">
+            <div class="work">
+              <a href="https://www.parsa-beauty.de/" target="_blank">Parsa Beauty</a
+              ><img class="arrow" src="./assets/arrow-link.svg" alt="" />
+            </div>
+            <div class="work">
+              <a href="https://qmsmedicosmetics.de/" target="_blank">QMS Medicosmetics</a
+              ><img class="arrow" src="./assets/arrow-link.svg" alt="" />
+            </div>
+            <div class="work">
+              <a href="https://coway.de/" target="_blank">Coway</a
+              ><img class="arrow" src="./assets/arrow-link.svg" alt="" />
+            </div>
+            <div class="work">
+              <a href="https://www.enibas.com/" target="_blank">Enibas</a
+              ><img class="arrow" src="./assets/arrow-link.svg" alt="" />
+            </div>
+            <div class="work">
+              <a href="https://locationhero.de/" target="_blank">Location hero</a
+              ><img class="arrow" src="./assets/arrow-link.svg" alt="" />
+            </div>
+          </div>
+        </section>
         <section class="contact">
           <h2 class="heading">Contact me</h2>
           <div class="contact__content">
@@ -107,9 +134,21 @@
           </div>
         </section>
         <footer>
-          <h3>© Karen Parco 2025</h3>
+          <h3>© Karen Parco 2026</h3>
         </footer>
       </div>
     </div>
+
+    <script>
+      const tabs = document.querySelectorAll(".tab");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.setAttribute("aria-pressed", t === tab));
+          document.querySelectorAll("[data-panel]").forEach((panel) => {
+            panel.hidden = panel.dataset.panel !== tab.dataset.tab;
+          });
+        });
+      });
+    </script>
   </body>
 </html>
